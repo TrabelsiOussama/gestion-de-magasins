@@ -1,0 +1,37 @@
+version: "2.2"
+services:
+
+
+  Product:
+    build: .\Productmanagement
+    ports:
+      - "8085:8085"
+    image: "produit-service"
+    hostname: "produit-service"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/
+    depends_on:
+      - Eureka
+      
+      
+  Eureka:
+    container_name: serviceregistry
+    build: .\Eureka_Server
+    ports:
+      - "8761:8761"
+    hostname: serviceregistry
+    image: "eureka"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/
+      
+  Zuul:
+    container_name: Zuul
+    image: "zuul"
+    build: .\Zuul-Gateway\Zuul-Gateway
+    ports:
+      - "8093:8093"
+    hostname: Zuul
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/
+    depends_on:
+      - "Eureka"
