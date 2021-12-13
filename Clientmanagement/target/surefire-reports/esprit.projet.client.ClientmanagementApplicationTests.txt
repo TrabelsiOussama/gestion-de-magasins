@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: esprit.projet.client.ClientmanagementApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.503 s <<< FAILURE! - in esprit.projet.client.ClientmanagementApplicationTests
+contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute ApplicationRunner
+Caused by: org.springframework.orm.jpa.JpaSystemException: No default constructor for entity:  : esprit.projet.client.Client; nested exception is org.hibernate.InstantiationException: No default constructor for entity:  : esprit.projet.client.Client
+Caused by: org.hibernate.InstantiationException: No default constructor for entity:  : esprit.projet.client.Client
+
