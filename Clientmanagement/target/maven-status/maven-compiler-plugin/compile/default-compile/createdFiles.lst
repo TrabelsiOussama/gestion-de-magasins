@@ -1,0 +1,5 @@
+esprit\projet\client\ClientmanagementApplication.class
+esprit\projet\client\ClientRepository.class
+esprit\projet\client\ClientRestAPI.class
+esprit\projet\client\Client.class
+esprit\projet\client\ClientService.class
